@@ -1,0 +1,56 @@
+# Memory-Game
+
+### Beschreibung
+Das Memory-Spiel ist ein klassisches Kartenspiel, bei dem der Spieler Kartenpaare finden muss, indem er zwei Karten gleichzeitig umdreht. Ziel ist es, alle Paare so schnell wie möglich aufzudecken. Dieses Projekt wurde entwickelt, um grundlegende Frontend-Fähigkeiten zu üben, darunter HTML, CSS und TypeScript, sowie um ein ansprechendes und benutzerfreundliches Design zu gestalten. An dem Projekt wurde mit Vite gearbeitet als SPA gehandhabt.
+
+### Features
+- Interaktives Spielbrett mit animierten Karten.
+- Zeit-Tracking: Verfolge, wie lange du brauchst, um alle Paare zu finden.
+- Versuchszähler: Zeigt die Anzahl der Züge an, die benötigt wurden.
+- Responsive Design: Optimiert für verschiedene Bildschirmgrößen (Desktop, Tablet, Mobile).
+- Neustart-Button: Möglichkeit, das Spiel jederzeit neu zu starten.
+
+### Grundstruktur
+
+#### HTML (index.html)
+Die HTML-Datei enthält die grundlegende Struktur des Spiels:
+- Einen Spielbereich (Game Board), in dem die Karten angezeigt werden.
+- Einen Bereich zur Anzeige von Timer und Zügen.
+- Einen Button, um das Spiel zurückzusetzen.
+
+#### CSS (styles.css)
+Das CSS sorgt für das Design des Spiels:
+- Ein flexibles Grid-Layout für die Karten.
+- Animationen für das Umdrehen der Karten.
+- Farben, Schriftarten und Abstände, die das Spiel visuell ansprechend machen.
+
+#### TypeScript (script.ts)
+Die TypeScript-Datei enthält die Spiellogik:
+- Generierung und Zufälliges Mischen der Karten.
+- Event-Listener, um Karten umzudrehen.
+- Logik zur Überprüfung, ob zwei Karten übereinstimmen.
+- Timer- und Zug-Tracking.
+
+### Hauptfunktionen:
+- `generateBoard()`: Erstellt das Spielfeld mit Karten.
+- `shuffleCards()`: Mischt die Karten zufällig.
+- `flipCard(event)`: Dreht eine Karte um und überprüft auf Übereinstimmung.
+- `startTimer()`: Startet den Timer, sobald der Spieler die erste Karte umdreht.
+- `resetGame()`: Setzt das Spiel zurück.
+
+### Beispiel einer Kartendatenstruktur
+```Typescript
+const cards = [
+    { id: 1, img: 'assets/card1.png' },
+    { id: 1, img: 'assets/card1.png' },
+    { id: 2, img: 'assets/card2.png' },
+    { id: 2, img: 'assets/card2.png' },
+    // Weitere Kartenpaare...
+];
+```
+
+### Erweiterungsmöglichkeiten
+- Schwierigkeitsgrad: Erhöhe die Anzahl der Karten für mehr Herausforderungen.
+- Highscore: Speichere die schnellste Zeit und die wenigsten Züge im LocalStorage.
+- Mehr Animationen: Füge weitere visuelle Effekte beim Aufdecken der Karten hinzu.
+- Soundeffekte: Spiele Sound ab, wenn ein Paar gefunden wurde.
