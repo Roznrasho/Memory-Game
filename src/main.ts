@@ -25,7 +25,7 @@ let movesDisplay: HTMLElement; // reference to moves display / Referenz auf Anze
 let timeDisplay: HTMLElement; 
 let gameBoard: HTMLElement;
 
-export { initialzeGame, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted, movesDisplay, restartButton, timeDisplay, gameBoard };
+export { Card, initialzeGame, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted, movesDisplay, restartButton, timeDisplay, gameBoard };
 
 function initialzeGame(): void {
     const emojis = ["🎲", "🎨", "🎭","⚽", "♟️", "🎁", "🏆", "🚀", "🎪","⚓", "🪭", "⚜️" ];

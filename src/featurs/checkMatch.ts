@@ -1,8 +1,9 @@
-import { flippedCards, cards, matchedPairs, } from '../main';
+import { flippedCards, cards, matchedPairs, Card } from '../main';
 import { renderCards } from './shuffleAndRender';
 import { endGame } from ';
 
 export { checkMatch, endGame };
+ 
 
 function checkMatch(): void {
     const [card1, card2] = matchedPairs;
