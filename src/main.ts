@@ -1,3 +1,4 @@
+import { restartGame } from './featurs/restartgame';
 import './style.css'
 
 interface Card {
@@ -34,4 +35,8 @@ function initialzeGame(): void {
         isMatched: false,
 }))
 };
+
+restartButton?.addEventListener('click', () => restartGame());
+initialzeGame();
+
 export { initialzeGame ,  memoryGame , timerElement , movesElement , restartButton , cards , flippedCards , matchedPairs , moves , timer , timerInterval , gameStarted };
