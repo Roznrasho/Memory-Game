@@ -13,8 +13,8 @@ const timerElement = document.getElementById("time");
 const movesElement = document.getElementById("moves");
 const restartButton = document.getElementById("restartButton");
 
-//game state variables
-let cards: HTMLElement[] = []; // array to store all cards / Array zum Speichern aller Karten
+//game state variexport {initialzeGame, memoryGame, timerElement, movesElement, restartButton, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted}ables
+let cards: Card[] = []; // array to store all cards / Array zum Speichern aller Karten
 let flippedCards: HTMLElement[] = []; // array to store flipped cards / Array zum Speichern der umgedrehten Karten
 let matchedPairs = 0; // number of matched pairs / Anzahl der übereinstimmenden Paare
 let moves = 0; // number of moves / Anzahl der Züge
@@ -25,12 +25,14 @@ let gameStarted = false; // flag to check if game has started / Flagge zur Über
 
 
 
-function initialzeGame(): void {
+ function initialzeGame(): void {
     const emojis = ["🎲", "🎨", "🎭","⚽", "♟️", "🎁", "🏆", "🚀", "🎪","⚓", "🪭", "⚜️" ];
-    const cards = [...emojis, ...emojis].map((value, index) => ({
+    cards = [...emojis, ...emojis].map((value, index) => ({
         id: index,
         value,
         isFlipped: false,
         isMatched: false,
 }))
+  
 };
+
