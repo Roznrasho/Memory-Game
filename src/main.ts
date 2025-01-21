@@ -12,3 +12,13 @@ const memoryGame = document.getElementById("gameBoard");
 const timerElement = document.getElementById("time");
 const movesElement = document.getElementById("moves");
 const restartButton = document.getElementById("restartButton");
+
+function initialzeGame(): void {
+    const emojis = ["🎲", "🎨", "🎭","⚽", "♟️", "🎁", "🏆", "🚀", "🎪","⚓", "🪭", "⚜️" ];
+    const cards = [...emojis, ...emojis].map((value, index) => ({
+        id: index,
+        value,
+        isflipped: false,
+        isMatched: false,
+}))
+};
