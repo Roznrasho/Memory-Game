@@ -1,6 +1,7 @@
+import { renderCards, shuffleCarde } from './featurs/shuffleAndRender';
 import './style.css'
 
-interface Card {
+export interface Card {
     id: number;
     value: string;
     isFlipped: boolean;
@@ -33,6 +34,7 @@ let gameStarted = false; // flag to check if game has started / Flagge zur Über
         isFlipped: false,
         isMatched: false,
 }))
-  
+  shuffleCarde(cards);
+  renderCards(cards);
 };
 
