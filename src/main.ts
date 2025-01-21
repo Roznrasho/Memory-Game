@@ -25,14 +25,6 @@ let gameStarted = false; // flag to check if game has started / Flagge zur Über
 
 
 
-
-
-
-
-
-
-
-
 function initialzeGame(): void {
     const emojis = ["🎲", "🎨", "🎭","⚽", "♟️", "🎁", "🏆", "🚀", "🎪","⚓", "🪭", "⚜️" ];
     const cards = [...emojis, ...emojis].map((value, index) => ({
