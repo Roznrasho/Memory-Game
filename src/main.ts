@@ -34,3 +34,4 @@ function initialzeGame(): void {
         isMatched: false,
 }))
 };
+export { initialzeGame ,  memoryGame , timerElement , movesElement , restartButton , cards , flippedCards , matchedPairs , moves , timer , timerInterval , gameStarted };
