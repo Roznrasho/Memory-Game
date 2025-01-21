@@ -18,7 +18,7 @@ function initialzeGame(): void {
     const cards = [...emojis, ...emojis].map((value, index) => ({
         id: index,
         value,
-        isflipped: false,
+        isFlipped: false,
         isMatched: false,
 }))
 };
