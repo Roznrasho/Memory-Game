@@ -1,4 +1,6 @@
 import { cards, flippedCards, gameStarted, moves, movesDisplay, timeDisplay, timerInterval ,} from "../main";
+import { shuffleCards } from "./shuffleCards";
+import { renderCards } from "./renderCards";
 
 function restartGame(): void {
     // Reset game state
