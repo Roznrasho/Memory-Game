@@ -1,4 +1,6 @@
 import { Card } from "../main";
+import { checkMatch } from "./checkMatch";
+import { flippedCards, gameStarted, moves, startTimer } from "../main";
 
 // handleCardClick-Funktion
 export function handleCardClick(
@@ -11,9 +13,9 @@ export function handleCardClick(
 ): void {
   if (card.isMatched || card.isFlipped || flippedCards.length >= 2) return;
 
-  if (!hasGameStarted) {
+  if (!gameStarted) {
     startTimer(timerElement);
-    hasGameStarted = true;
+    gameStarted = true;
   }
 
   card.isFlipped = true;
