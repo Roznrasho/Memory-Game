@@ -42,6 +42,6 @@ function initialzeGame(): void {
     shuffleCarde(cards);
     renderCards(cards);
 }
-export type{ Card, initialzeGame, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted, movesDisplay, restartButton, timeDisplay, gameBoard };
-
+export {initialzeGame, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted, movesDisplay, restartButton, timeDisplay, gameBoard };
+export type { Card };
 
