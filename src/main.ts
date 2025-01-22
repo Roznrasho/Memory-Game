@@ -1,4 +1,6 @@
-import './style.css'
+import { restartGame } from './featurs/restartgame.ts';
+import { renderCards, shuffleCarde } from './featurs/shuffleAndRender.ts';
+import './style.css';
 
 interface Card {
     id: number;
@@ -13,7 +15,7 @@ const timerElement = document.getElementById("time");
 const movesElement = document.getElementById("moves");
 const restartButton = document.getElementById("restartButton");
 
-//game state variables
+//game state variexport {initialzeGame, memoryGame, timerElement, movesElement, restartButton, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted}ables
 let cards: Card[] = []; // array to store all cards / Array zum Speichern aller Karten
 let flippedCards: Card[] = []; // array to store flipped cards / Array zum Speichern der umgedrehten Karten
 let matchedPairs:Card[]= []; // number of matched pairs / Anzahl der übereinstimmenden Paare
@@ -25,15 +27,21 @@ let movesDisplay: HTMLElement; // reference to moves display / Referenz auf Anze
 let timeDisplay: HTMLElement; 
 let gameBoard: HTMLElement;
 
-export { initialzeGame, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted, movesDisplay, restartButton, timeDisplay, gameBoard };
+ restartButton?.addEventListener('click', () => restartGame());
+initialzeGame();
+
 
 function initialzeGame(): void {
     const emojis = ["🎲", "🎨", "🎭","⚽", "♟️", "🎁", "🏆", "🚀", "🎪","⚓", "🪭", "⚜️" ];
-    
-     cards = [...emojis, ...emojis].map((value, index) => ({
+    cards = [...emojis, ...emojis].map((value, index) => ({
         id: index,
         value,
         isFlipped: false,
         isMatched: false,
-}))
-};
+    }));
+    shuffleCarde(cards);
+    renderCards(cards);
+}
+export type{ Card, initialzeGame, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted, movesDisplay, restartButton, timeDisplay, gameBoard };
+
+
