@@ -61,7 +61,7 @@ export {
   matchedPairs,
   moves,
   timer,
-  timerInterval,
+  startTimer,
   gameStarted,
   movesDisplay,
   restartButton,
