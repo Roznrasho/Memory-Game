@@ -5,11 +5,11 @@ import { flippedCards, gameStarted, moves, startTimer } from "../main";
 // handleCardClick-Funktion
 export function handleCardClick(
   card: Card,
-  cards: Card[],
-  renderCards: () => void,
-  movesDisplay: HTMLElement,
-  timerElement: HTMLElement,
-  onGameEnd: () => void
+  //cards: Card[],
+  //renderCards: () => void,
+  //movesDisplay: HTMLElement,
+  //timerElement: HTMLElement,
+  //onGameEnd: () => void
 ): void {
   if (card.isMatched || card.isFlipped || flippedCards.length >= 2) return;
 
