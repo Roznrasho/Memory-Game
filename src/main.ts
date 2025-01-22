@@ -1,12 +1,12 @@
-import { restartGame } from './featurs/restartgame.ts';
-import { renderCards, shuffleCarde } from './featurs/shuffleAndRender.ts';
-import './style.css';
+import { restartGame } from "./featurs/restartgame.ts";
+import { renderCards, shuffleCarde } from "./featurs/shuffleAndRender.ts";
+import "./style.css";
 
 interface Card {
-    id: number;
-    value: string;
-    isFlipped: boolean;
-    isMatched: boolean;
+  id: number;
+  value: string;
+  isFlipped: boolean;
+  isMatched: boolean;
 }
 
 // Get references to DOM elements
@@ -21,27 +21,51 @@ let flippedCards: HTMLElement[] = []; // array to store flipped cards / Array zu
 let matchedPairs = 0; // number of matched pairs / Anzahl der übereinstimmenden Paare
 let moves: number = 0; // number of moves / Anzahl der Züge
 let timer: number = 0; // timer in seconds / Timer in Sekunden
-let timerInterval: number | null; // interval to update timer / Intervall zum Aktualisieren des Timers
+let startTimer: number | null; // interval to update timer / Intervall zum Aktualisieren des Timers
 let gameStarted: boolean = false; // flag to check if game has started / Flagge zur Überprüfung, ob das Spiel gestartet wurde
 let movesDisplay: HTMLElement; // reference to moves display / Referenz auf Anzeige der Züge
-let timeDisplay: HTMLElement; 
+let timeDisplay: HTMLElement;
 let gameBoard: HTMLElement;
 
- restartButton?.addEventListener('click', () => restartGame());
+restartButton?.addEventListener("click", () => restartGame());
 initialzeGame();
 
-
 function initialzeGame(): void {
-    const emojis = ["🎲", "🎨", "🎭","⚽", "♟️", "🎁", "🏆", "🚀", "🎪","⚓", "🪭", "⚜️" ];
-    cards = [...emojis, ...emojis].map((value, index) => ({
-        id: index,
-        value,
-        isFlipped: false,
-        isMatched: false,
-    }));
-    shuffleCarde(cards);
-    renderCards(cards);
+  const emojis = [
+    "🎲",
+    "🎨",
+    "🎭",
+    "⚽",
+    "♟️",
+    "🎁",
+    "🏆",
+    "🚀",
+    "🎪",
+    "⚓",
+    "🪭",
+    "⚜️",
+  ];
+  cards = [...emojis, ...emojis].map((value, index) => ({
+    id: index,
+    value,
+    isFlipped: false,
+    isMatched: false,
+  }));
+  shuffleCarde(cards);
+  renderCards(cards);
 }
-export type{ Card, initialzeGame, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted, movesDisplay, restartButton, timeDisplay, gameBoard };
-
-
+export type {
+  Card,
+  initialzeGame,
+  cards,
+  flippedCards,
+  matchedPairs,
+  moves,
+  timer,
+  startTimer,
+  gameStarted,
+  movesDisplay,
+  restartButton,
+  timeDisplay,
+  gameBoard,
+};
