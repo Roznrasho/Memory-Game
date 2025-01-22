@@ -17,8 +17,8 @@ const restartButton = document.getElementById("restartButton");
 
 //game state variexport {initialzeGame, memoryGame, timerElement, movesElement, restartButton, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted}ables
 let cards: Card[] = []; // array to store all cards / Array zum Speichern aller Karten
-let flippedCards: HTMLElement[] = []; // array to store flipped cards / Array zum Speichern der umgedrehten Karten
-let matchedPairs = 0; // number of matched pairs / Anzahl der übereinstimmenden Paare
+let flippedCards: Card[] = []; // array to store flipped cards / Array zum Speichern der umgedrehten Karten
+let matchedPairs:Card[]= []; // array to store matched pairs / Array zum Speichern der passenden Paare
 let moves: number = 0; // number of moves / Anzahl der Züge
 let timer: number = 0; // timer in seconds / Timer in Sekunden
 let timerInterval: number | null; // interval to update timer / Intervall zum Aktualisieren des Timers
