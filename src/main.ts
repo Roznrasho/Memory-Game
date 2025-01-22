@@ -1,3 +1,4 @@
+import { restartGame } from './featurs/restartgame.ts';
 import { renderCards, shuffleCarde } from './featurs/shuffleAndRender.ts';
 import './style.css';
 
@@ -26,7 +27,9 @@ let movesDisplay: HTMLElement; // reference to moves display / Referenz auf Anze
 let timeDisplay: HTMLElement; 
 let gameBoard: HTMLElement;
 
-export type{ Card, initialzeGame, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted, movesDisplay, restartButton, timeDisplay, gameBoard };
+ restartButton?.addEventListener('click', () => restartGame());
+initialzeGame();
+
 
 function initialzeGame(): void {
     const emojis = ["🎲", "🎨", "🎭","⚽", "♟️", "🎁", "🏆", "🚀", "🎪","⚓", "🪭", "⚜️" ];
@@ -39,4 +42,6 @@ function initialzeGame(): void {
     shuffleCarde(cards);
     renderCards(cards);
 }
+export type{ Card, initialzeGame, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted, movesDisplay, restartButton, timeDisplay, gameBoard };
+
 
