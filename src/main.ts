@@ -1,7 +1,7 @@
-import { restartGame } from "./featurs/restartgame";
-import { renderCards, shuffleCarde } from "./featurs/shuffleAndRender";
-import { timerInterval } from "./featurs/startTimer";
-import { handleCardClick } from "./featurs/handleCardClick";
+import { restartGame } from "./features/restartgame";
+import { renderCards, shuffleCarde } from "./features/shuffleAndRender";
+import { timerInterval } from "./features/startTimer";
+import { handleCardClick } from "./features/handleCardClick";
 import "./style.css";
 
 interface Card {
