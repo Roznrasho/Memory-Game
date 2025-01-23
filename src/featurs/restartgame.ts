@@ -3,12 +3,15 @@ import {
   flippedCards,
   gameStarted,
   moves,
-  movesDisplay,
-  timeDisplay,
+  movesElement,
+  timerElement,
   timerInterval,
+  memoryGame,
+  
 } from "../main";
 
 import { renderCards, shuffleCarde } from "./shuffleAndRender";
+import { handleCardClick } from "./handleCardClick";
 
 function restartGame(): void {
   // Reset game state
@@ -19,8 +22,8 @@ function restartGame(): void {
   flippedCards;
   moves;
   gameStarted;
-  movesDisplay.textContent;
-  timeDisplay.textContent;
+  movesElement.textContent;
+  timerElement.textContent;
 
   // Clear timer if it's running
   if (timerInterval) {
@@ -30,7 +33,7 @@ function restartGame(): void {
 
 
   // Shuffle and render
-  shuffleCarde();
-  renderCards();
+  shuffleCarde(cards);
+  renderCards(memoryGame, cards, handleCardClick);
 }
 export { restartGame };
