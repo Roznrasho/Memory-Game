@@ -1,7 +1,7 @@
-import { cards, matchedPairs } from "../main";
+import { memoryGame, cards, matchedPairs } from "../main";
 import { renderCards } from "./shuffleAndRender";
 import { endGame } from "./endGame";
-
+import { handleCardClick } from "./handleCardClick";
 
 function checkMatch(): void {
   
@@ -18,9 +18,9 @@ function checkMatch(): void {
     card2.isFlipped = false;
   }
 
-  matchedPairs;
-  renderCards();
+  matchedPairs.length = 0;
+  renderCards(memoryGame, cards, handleCardClick);
 }
 
 
-export { checkMatch, endGame };
+export { checkMatch};
