@@ -1,34 +1,26 @@
 import { Card } from "../main";
 import { checkMatch } from "./checkMatch";
-import { flippedCards, gameStarted, moves, startTimer } from "../main";
+import { flippedCards} from "../main";
+import { startTimer } from "./startTimer";
+
+let gameStarted: boolean = false;
+let moves: number = 0;
 
 // handleCardClick-Funktion
-function handleCardClick(
-  card: Card,
-  //cards: Card[],
-  //renderCards: () => void,
-  //movesDisplay: HTMLElement,
-  //timerElement: HTMLElement,
-  //onGameEnd: () => void
-): void {
-  if (card.isMatched || card.isFlipped || flippedCards.length >= 2) return;
+function handleCardClick(cards: Card): void {
+  if (cards.isMatched || cards.isFlipped || flippedCards.length >= 2) return;
 
   if (!gameStarted) {
     startTimer();
     gameStarted = true;
   }
 
-  card.isFlipped = true;
-  flippedCards.push(card);
-  renderCards();
+  cards.isFlipped = true;
+  flippedCards.push(cards);
 
   if (flippedCards.length === 2) {
     moves++;
-    movesDisplay.textContent = moves.toString();
-    setTimeout(() => {
-      checkMatch(flippedCards, renderCards, onGameEnd);
-      flippedCards = [];
-    }, 500);
+    checkMatch();
   }
 }
 
