@@ -14,7 +14,7 @@ export function handleCardClick(
   if (card.isMatched || card.isFlipped || flippedCards.length >= 2) return;
 
   if (!gameStarted) {
-    startTimer(timerElement);
+    startTimer();
     gameStarted = true;
   }
 

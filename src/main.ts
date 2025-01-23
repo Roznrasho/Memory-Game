@@ -1,6 +1,7 @@
 import { restartGame } from "./featurs/restartgame";
 import { renderCards, shuffleCarde } from "./featurs/shuffleAndRender";
-import { startTimer } from "./featurs/startTimer";
+import { timerInterval } from "./featurs/startTimer";
+import { handleCardClick } from "./featurs/handleCardClick";
 import "./style.css";
 
 interface Card {
@@ -22,7 +23,7 @@ let flippedCards: Card[] = []; // array to store flipped cards / Array zum Speic
 let matchedPairs: Card[] = []; // array to store matched pairs / Array zum Speichern der passenden Paare
 let moves: number = 0; // number of moves / Anzahl der Züge
 let timer: number = 0;// timer in seconds / Timer in Sekunden
-let startTimer: number | null; // interval to update timer / Intervall zum Aktualisieren des Timers
+let timerInterval: number | null = null; // interval to update timer / Intervall zum Aktualisieren des Timers
 let gameStarted: boolean = false; // flag to check if game has started / Flagge zur Überprüfung, ob das Spiel gestartet wurde
 //let movesDisplay: HTMLElement; // reference to moves display / Referenz auf Anzeige der Züge
 //let timeDisplay: HTMLElement;
@@ -60,6 +61,9 @@ function initializeGame(): void {
   movesElement.textContent = "0";
   timerElement.textContent = "0:00";
 }
+
+document.addEventListener('DOMContentLoaded', initializeGame);
+
 export {
  initializeGame,
   cards,
@@ -67,7 +71,7 @@ export {
   matchedPairs,
   moves,
   timer,
-  startTimer,
+  timerInterval,
   gameStarted,
   restartButton,
   memoryGame,
