@@ -3,7 +3,7 @@ import { checkMatch } from "./checkMatch";
 import { flippedCards, gameStarted, moves, startTimer } from "../main";
 
 // handleCardClick-Funktion
-export function handleCardClick(
+function handleCardClick(
   card: Card,
   //cards: Card[],
   //renderCards: () => void,
@@ -31,3 +31,5 @@ export function handleCardClick(
     }, 500);
   }
 }
+
+export { handleCardClick };

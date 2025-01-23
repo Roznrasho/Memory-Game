@@ -1,5 +1,5 @@
 import { Card } from "../main";
-import { handleCardClick } from "./handleCardClick";
+
 
 const shuffleCarde = (cards: Card[]): void => {
   // Shuffles an array of cards in place using the Fisher-Yates algorithm.
@@ -12,9 +12,9 @@ const shuffleCarde = (cards: Card[]): void => {
 
 // Define the renderCards function to render the cards on the memory game board
 function renderCards(
-  memoryGame: HTMLElement, // The HTML element representing the memory game board
+  memoryGame: HTMLDivElement, // The HTML element representing the memory game board
   cards: Card[], // The array of card objects to be rendered
-  handleCardClick: (card: Card) => void
+  handleCardClick: (cards:Card) => void // The function to handle card clicks 
 ): void {
   memoryGame.innerHTML = ""; // Clear the existing content of the memory game board
   cards.forEach((card) => {
@@ -30,5 +30,4 @@ function renderCards(
   });
 }
 
-export { shuffleCarde };
-export { renderCards };
+export { shuffleCarde, renderCards };
