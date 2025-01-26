@@ -11,11 +11,13 @@ function startTimer(): void {
       timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
     }, 1000);
   }
+
   function stopTimer(): void {
     if (timerInterval !== null) {
       clearInterval(timerInterval);
       timerInterval = null;
     }
   }
+  
   
   export { startTimer, stopTimer, timerInterval };
