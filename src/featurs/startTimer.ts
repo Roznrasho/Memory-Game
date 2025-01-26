@@ -1,8 +1,8 @@
-import { timeDisplay } from "../main";
+import { timeDisplay,  } from "../main";
 
 function startTimer(): void {
    let  timer = Date.now();
-    let timerInterval = window.setInterval(() => {
+    let  timerInterval = window.setInterval(() => {
       const elapsedTime = Math.floor((Date.now() - timer) / 1000);
       const minutes = Math.floor(elapsedTime / 60);
       const seconds = elapsedTime % 60;

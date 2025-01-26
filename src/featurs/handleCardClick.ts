@@ -1,6 +1,6 @@
-import { Card } from "../main";
-import { checkMatch } from "./checkMatch";
-import { flippedCards, gameStarted, moves, startTimer } from "../main";
+ { Card } from "../main";
+ { checkMatch } from "./checkMatch";
+ { flippedCards, gameStarted, moves, startTimer } from "../main";
 
 // handleCardClick-Funktion
 export function handleCardClick(

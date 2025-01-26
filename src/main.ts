@@ -21,6 +21,7 @@ let flippedCards: Card[] = []; // array to store flipped cards / Array zum Speic
 let matchedPairs: Card[] = []; // array to store matched pairs / Array zum Speichern der passenden Paare
 let moves: number = 0; // number of moves / Anzahl der Züge
 let timer: number = 0;// timer in seconds / Timer in Sekunden
+ let timerInterval: number | null = null;
 let startTimer: number | null; // interval to update timer / Intervall zum Aktualisieren des Timers
 let gameStarted: boolean = false; // flag to check if game has started / Flagge zur Überprüfung, ob das Spiel gestartet wurde
 let movesDisplay: HTMLElement; // reference to moves display / Referenz auf Anzeige der Züge
@@ -67,5 +68,6 @@ export {
   restartButton,
   timeDisplay,
   gameBoard,
+    timerInterval,
 };
 export type { Card };
