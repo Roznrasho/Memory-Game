@@ -16,9 +16,9 @@ const timerElement = document.getElementById("time") as HTMLSpanElement;
 const movesElement = document.getElementById("moves") as HTMLSpanElement;
 const restartButton = document.getElementById("restartButton") as HTMLButtonElement;
 
-//game state variexport {initialzeGame, memoryGame, timerElement, movesElement, restartButton, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted}ables
-let cards: Card[] = []; // array to store all cards / Array zum Speichern aller Karten
-let flippedCards: Card[] = []; // array to store flipped cards / Array zum Speichern der umgedrehten Karten
+//game state variexport {initialzeGame, memoryGame, timerElement, movesElement, restartButton, card, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted}ables
+let card: Card[] = []; // array to store all card / Array zum Speichern aller Karten
+let flippedCards: Card[] = []; // array to store flipped card / Array zum Speichern der umgedrehten Karten
 let matchedPairs: Card[] = []; // array to store matched pairs / Array zum Speichern der passenden Paare
 let moves: number = 0; // number of moves / Anzahl der Züge
 let timer: number = 0;// timer in seconds / Timer in Sekunden
@@ -46,14 +46,14 @@ function initializeGame(): void {
     "🪭",
     "⚜️",
   ];
-  cards = [...emojis, ...emojis].map((value, index) => ({
+  card = [...emojis, ...emojis].map((value, index) => ({
     id: index,
     value,
     isFlipped: false,
     isMatched: false,
   }));
-  shuffleCarde(cards);
-  renderCards(cards);
+  shuffleCarde(card);
+  renderCards(card);
   moves = 0;
   timer = 0;
   gameStarted = false;
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', initializeGame);
 
 export {
  initializeGame,
-  cards,
+  card,
   flippedCards,
   matchedPairs,
   moves,

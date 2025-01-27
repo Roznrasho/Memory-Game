@@ -1,4 +1,4 @@
-import { cards, matchedPairs, flippedCards } from "../main";
+import { card, matchedPairs, flippedCards } from "../main";
 import { renderCards } from "./shuffleAndRender";
 import { endGame } from "./endGame";
 
@@ -10,7 +10,7 @@ function checkMatch(): void {
     card1.isMatched = true;
     card2.isMatched = true;
     matchedPairs.push(card1, card2);
-    if (cards.every((card) => card.isMatched)) {
+    if (card.every((card) => card.isMatched)) {
       endGame();
     }
   } else {
@@ -19,7 +19,7 @@ function checkMatch(): void {
   }
 
   flippedCards.length = 0;
-  renderCards(cards);
+  renderCards(card);
 }
 
 

@@ -1,5 +1,5 @@
 import {
-  cards,
+  card,
   flippedCards,
   gameStarted,
   moves,
@@ -15,7 +15,7 @@ import { renderCards, shuffleCarde } from "./shuffleAndRender";
 
 function restartGame(): void {
   // Reset game state
-  cards.forEach((card) => {
+  card.forEach((card) => {
     card.isFlipped = false;
     card.isMatched = false;
   });
@@ -33,7 +33,7 @@ function restartGame(): void {
 
 
   // Shuffle and render
-  shuffleCarde(cards);
-  renderCards (cards);
+  shuffleCarde(card);
+  renderCards (card);
 }
 export { restartGame };
