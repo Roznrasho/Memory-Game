@@ -7,25 +7,24 @@ let moves: number = 0;
 
 // handleCardClick-Funktion
 function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
-
-   // Verhindere Klicks auf bereits zugeordnete oder umgedrehte Karten oder wenn bereits 2 Karten ausgewählt sind
+  // Verhindere Klicks auf bereits zugeordnete oder umgedrehte Karten oder wenn bereits 2 Karten ausgewählt sind
   if (card.isMatched || card.isFlipped || flippedCards.length >= 2) return;
 
-// Starte den Timer beim ersten Klick
+  // Starte den Timer beim ersten Klick
   if (!gameStarted) {
     startTimer();
     gameStarted = true;
   }
- // Markiere die Karte als umgedreht und füge sie zum flippedCards-Array hinzu
+  // Markiere die Karte als umgedreht und füge sie zum flippedCards-Array hinzu
   card.isFlipped = true;
   flippedCards.push(card);
 
-   // Aktualisiere die Klasse des DOM-Elements, um die Karte visuell zu drehen
+  // Aktualisiere die Klasse des DOM-Elements, um die Karte visuell zu drehen
   cardElement.className = `card ${
     card.isFlipped || card.isMatched ? "flipped" : ""
-  }`; 
-  
-    // Wenn 2 Karten ausgewählt wurden, prüfe, ob sie ein Paar sind
+  }`;
+
+  // Wenn 2 Karten ausgewählt wurden, prüfe, ob sie ein Paar sind
   if (flippedCards.length === 2) {
     moves++;
 
