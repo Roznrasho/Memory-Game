@@ -19,11 +19,11 @@ function restartGame(): void {
     card.isFlipped = false;
     card.isMatched = false;
   });
-  flippedCards;
+  flippedCards.length = 0;
   moves;
   gameStarted;
-  movesElement.textContent;
-  timerElement.textContent;
+  movesElement.textContent = "0";
+  timerElement.textContent = "0:00";
 
   // Clear timer if it's running
   if (timerInterval) {
