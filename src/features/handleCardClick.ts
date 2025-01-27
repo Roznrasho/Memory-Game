@@ -1,7 +1,7 @@
-import { Card } from "../main";
+import { Card, movesElement, timerElement } from "../main";
 import { checkMatch } from "./checkMatch";
 import { flippedCards} from "../main";
-import { startTimer } from "./startTimer";
+import { startTimer, timerInterval } from "./startTimer";
 
 let gameStarted: boolean = false;
 let moves: number = 0;
@@ -23,6 +23,8 @@ function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
 
   if (flippedCards.length === 2) {
     moves++;
+   movesElement.textContent = `${moves}`
+   timerElement.textContent =  `${timerInterval}`
     checkMatch();
   }
 }
