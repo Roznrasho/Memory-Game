@@ -7,8 +7,15 @@ let gameStarted: boolean = false;
 let moves: number = 0;
 
 // handleCardClick-Funktion
+<<<<<<< HEAD
 function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
   if (card.isMatched || card.isFlipped || flippedCards.length >= 2) return;
+=======
+function handleCardClick(cards: Card): void {
+  console.log(handleCardClick);
+  
+  if (cards.isMatched || cards.isFlipped || flippedCards.length >= 2) return; // Return if the card is already matched, flipped, or there are already two flipped cards // gebe zurück, wenn die Karte bereits übereinstimmt, umgedreht ist oder bereits zwei Karten umgedreht sind
+>>>>>>> 8ed75ed99b3247a7a696e6265f26078f16ccd1d5
 
   if (!gameStarted) {
     startTimer();
