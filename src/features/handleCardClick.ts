@@ -1,23 +1,22 @@
-import { Card, flippedCards } from "../main";
+import { Card, movesElement, gameState} from "../main";
 import { checkMatch } from "./checkMatch";
 import { startTimer } from "./startTimer";
 
-let gameStarted: boolean = false;
-let moves: number = 0;
+
 
 // handleCardClick-Funktion
 function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
   // Verhindere Klicks auf bereits zugeordnete oder umgedrehte Karten oder wenn bereits 2 Karten ausgewählt sind
-  if (card.isMatched || card.isFlipped || flippedCards.length >= 2) return;
+  if (card.isMatched || card.isFlipped || gameState.flippedCards.length >= 2) return;
 
   // Starte den Timer beim ersten Klick
-  if (!gameStarted) {
+  if (!gameState.gameStarted) {
     startTimer();
-    gameStarted = true;
+    gameState.gameStarted = true;
   }
   // Markiere die Karte als umgedreht und füge sie zum flippedCards-Array hinzu
   card.isFlipped = true;
-  flippedCards.push(card);
+  gameState.flippedCards.push(card);
 
   // Aktualisiere die Klasse des DOM-Elements, um die Karte visuell zu drehen
   cardElement.className = `card ${
@@ -25,19 +24,20 @@ function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
   }`;
 
   // Wenn 2 Karten ausgewählt wurden, prüfe, ob sie ein Paar sind
-  if (flippedCards.length === 2) {
-    moves++;
+  if (gameState.flippedCards.length === 2) {
+    gameState.moves++;
+    movesElement.textContent = gameState.moves.toString(); // Aktualisiere die Züge im UI                                   
 
     // Überprüfe, ob die Karten ein Match sind
-    if (flippedCards[0].value === flippedCards[1].value) {
+    if (gameState.flippedCards[0].value === gameState.flippedCards[1].value) {
       // Karten passen zusammen: Markiere sie als "matched" und leere flippedCards
-      flippedCards[0].isMatched = true;
-      flippedCards[1].isMatched = true;
-      flippedCards.length = 0; // Array leeren
+      gameState.flippedCards[0].isMatched = true;
+      gameState.flippedCards[1].isMatched = true;
+      gameState.flippedCards.length = 0; // Array leeren
     } else {
       // Karten passen nicht zusammen: Schließe sie nach einer kurzen Verzögerung
       setTimeout(() => {
-        flippedCards.forEach((flippedCard) => {
+        gameState.flippedCards.forEach((flippedCard) => {
           flippedCard.isFlipped = false;
 
           // Aktualisiere die Klasse der Karten im DOM
@@ -50,7 +50,7 @@ function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
           });
         });
 
-        flippedCards.length = 0; // Array leeren
+        gameState.flippedCards.length = 0; // Array leeren
       }, 1000); // 1 Sekunde Verzögerung, bevor die Karten wieder zugedeckt werden
     }
   }

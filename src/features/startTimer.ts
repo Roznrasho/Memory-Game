@@ -1,11 +1,11 @@
-import { timerElement } from "../main";
+import { timerElement, gameState } from "../main";
 
 let timerInterval: number | null = null;
 
 function startTimer(): void {
-   let  timer = Date.now();
+  gameState.timer = Date.now();
    timerInterval = window.setInterval(() => {
-      const elapsedTime = Math.floor((Date.now() - timer) / 1000);
+      const elapsedTime = Math.floor((Date.now() - gameState.timer) / 1000);
       const minutes = Math.floor(elapsedTime / 60);
       const seconds = elapsedTime % 60;
       timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;

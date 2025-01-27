@@ -1,15 +1,11 @@
 import {
   card,
-  flippedCards,
-  gameStarted,
-  moves,
+  gameState,
   movesElement,
   timerElement,
-  timerInterval,
- 
-  
 } from "../main";
 
+import { timerInterval } from "./startTimer";
 import { renderCards, shuffleCarde } from "./shuffleAndRender";
 
 
@@ -19,16 +15,18 @@ function restartGame(): void {
     card.isFlipped = false;
     card.isMatched = false;
   });
-  flippedCards.length = 0;
-  moves;
-  gameStarted;
+  gameState.flippedCards.length = 0;
+  gameState.matchedPairs.length = 0;
+  gameState.moves = 0;
+  gameState.timer = 0;
+  gameState.gameStarted = false; // Wichtig, um sicherzustellen, dass der Timer erneut gestartet werden kann
   movesElement.textContent = "0";
   timerElement.textContent = "0:00";
 
   // Clear timer if it's running
   if (timerInterval) {
     clearInterval(timerInterval);
-    timerInterval;
+    gameState.timerInterval = null;
   }
 
 

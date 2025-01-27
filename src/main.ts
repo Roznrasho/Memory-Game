@@ -1,7 +1,8 @@
 import { restartGame } from "./features/restartgame";
 import { renderCards, shuffleCarde } from "./features/shuffleAndRender";
-import { timerInterval } from "./features/startTimer";
+//import { startTimer, timerInterval } from "./features/startTimer";
 import "./style.css";
+
 
 interface Card {
   id: number;
@@ -18,8 +19,8 @@ const restartButton = document.getElementById("restartButton") as HTMLButtonElem
 
 //game state variexport {initialzeGame, memoryGame, timerElement, movesElement, restartButton, card, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted}ables
 let card: Card[] = []; // array to store all card / Array zum Speichern aller Karten
-let flippedCards: Card[] = []; // array to store flipped card / Array zum Speichern der umgedrehten Karten
-let matchedPairs: Card[] = []; // array to store matched pairs / Array zum Speichern der passenden Paare
+//let flippedCards: Card[] = []; // array to store flipped card / Array zum Speichern der umgedrehten Karten
+//let matchedPairs: Card[] = []; // array to store matched pairs / Array zum Speichern der passenden Paare
 let moves: number = 0; // number of moves / Anzahl der Züge
 let timer: number = 0;// timer in seconds / Timer in Sekunden
 // let timerInterval: number | null = null; // interval to update timer / Intervall zum Aktualisieren des Timers
@@ -63,15 +64,19 @@ function initializeGame(): void {
 
 document.addEventListener('DOMContentLoaded', initializeGame);
 
+export const gameState = {
+  moves: 0,
+  timer: 0,
+  timerInterval: null as NodeJS.Timer | null,
+  gameStarted: false,
+  flippedCards: [] as Card[],
+  matchedPairs: [] as Card[],
+};
+
+
 export {
  initializeGame,
   card,
-  flippedCards,
-  matchedPairs,
-  moves,
-  timer,
-  timerInterval,
-  gameStarted,
   restartButton,
   memoryGame,
   timerElement,
