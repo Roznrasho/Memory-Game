@@ -1,7 +1,6 @@
 import { restartGame } from "./features/restartgame";
 import { renderCards, shuffleCarde } from "./features/shuffleAndRender";
 import { timerInterval } from "./features/startTimer";
-import { handleCardClick } from "./features/handleCardClick";
 import "./style.css";
 
 interface Card {
@@ -54,7 +53,7 @@ function initializeGame(): void {
     isMatched: false,
   }));
   shuffleCarde(cards);
-  renderCards(memoryGame, cards, handleCardClick);
+  renderCards(cards);
   moves = 0;
   timer = 0;
   gameStarted = false;

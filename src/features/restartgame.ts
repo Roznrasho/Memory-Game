@@ -6,12 +6,12 @@ import {
   movesElement,
   timerElement,
   timerInterval,
-  memoryGame,
+ 
   
 } from "../main";
 
 import { renderCards, shuffleCarde } from "./shuffleAndRender";
-import { handleCardClick } from "./handleCardClick";
+
 
 function restartGame(): void {
   // Reset game state
@@ -34,6 +34,6 @@ function restartGame(): void {
 
   // Shuffle and render
   shuffleCarde(cards);
-  renderCards(memoryGame, cards, handleCardClick);
+  renderCards (cards);
 }
 export { restartGame };
