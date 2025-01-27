@@ -96,7 +96,7 @@ body {
 .card-back {
   background-color: white;
   transform: rotateY(180deg);
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .card.matched {
