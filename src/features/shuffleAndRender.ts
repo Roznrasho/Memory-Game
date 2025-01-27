@@ -26,7 +26,9 @@ function renderCards(
     cardElement.innerHTML = `
                          <div class="card-front"></div>
                         <div class="card-back">${card.value}</div>`; // Set the inner HTML of the card element
+    console.log(cardElement);
     cardElement.addEventListener("click", () => handleCardClick(card)); // Add a click event listener to the card element
+    
     memoryGame.appendChild(cardElement);
   });
 }
