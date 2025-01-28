@@ -1,5 +1,5 @@
 import { Card, movesElement, gameState} from "../main";
-import { checkMatch } from "./checkMatch";
+
 import { startTimer } from "./startTimer";
 
 

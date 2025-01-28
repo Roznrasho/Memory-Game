@@ -1,4 +1,5 @@
-import { timerInterval } from "../main";
+import { timerInterval } from "./startTimer";
+
 
 
 function endGame(): void {
