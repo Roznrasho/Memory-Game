@@ -1,7 +1,8 @@
-import { gameState } from "../main";
+
 import { renderCards } from "./shuffleAndRender";
 import { endGame } from "./endGame";
 import { card } from "./initializeGame";
+import { gameState } from "../gameStateData/gameState";
 
 function checkMatch(): void {
   const [card1, card2] = gameState.flippedCards;

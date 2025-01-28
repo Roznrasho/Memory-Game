@@ -1,6 +1,7 @@
 import { shuffleCarde, renderCards } from "./shuffleAndRender";
-import { gameState, movesElement, timerElement } from "../main";
+import {  movesElement, timerElement } from "../main";
 import type { Card } from "../main";
+import { gameState } from "../gameStateData/gameState";
 
 let card: Card[] = [];
 

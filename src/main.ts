@@ -19,14 +19,7 @@ const restartButton = document.getElementById(
 
 //game state variexport {initialzeGame, memoryGame, timerElement, movesElement, restartButton, card, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted}ables
 // let card: Card[] = []; // array to store all card / Array zum Speichern aller Karten
-export const gameState = {
-  moves: 0,
-  timer: 0,
-  timerInterval: null as NodeJS.Timer | null,
-  gameStarted: false,
-  flippedCards: [] as Card[],
-  matchedPairs: [] as Card[],
-};
+
 
 //Eventlister for restart button
 restartButton?.addEventListener("click", restartGame);

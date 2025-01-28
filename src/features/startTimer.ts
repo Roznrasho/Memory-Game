@@ -1,4 +1,5 @@
-import { timerElement, gameState } from "../main";
+import { gameState } from "../gameStateData/gameState";
+import { timerElement} from "../main";
 
 let timerInterval: number | null = null;
 

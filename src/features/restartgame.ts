@@ -1,7 +1,8 @@
-import { gameState, movesElement, timerElement } from "../main";
+import {  movesElement, timerElement } from "../main";
 import { card } from "./initializeGame";
 import { timerInterval } from "./startTimer";
 import { renderCards, shuffleCarde } from "./shuffleAndRender";
+import { gameState } from "../gameStateData/gameState";
 
 function restartGame(): void {
   // Reset game state

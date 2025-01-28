@@ -1,4 +1,5 @@
-import { Card, movesElement, gameState } from "../main";
+import { gameState } from "../gameStateData/gameState";
+import { Card, movesElement} from "../main";
 
 import { startTimer } from "./startTimer";
 
