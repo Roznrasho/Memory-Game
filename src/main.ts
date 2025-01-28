@@ -1,6 +1,6 @@
-import { restartGame } from "./featurs/restartgame.ts";
-import { renderCards, shuffleCarde } from "./featurs/shuffleAndRender.ts";
+import { restartGame } from "./features/restartgame";
 import "./style.css";
+import { initializeGame } from "./features/initializeGame";
 
 interface Card {
   id: number;
@@ -10,11 +10,14 @@ interface Card {
 }
 
 // Get references to DOM elements
-const memoryGame = document.getElementById("gameBoard");
-const timerElement = document.getElementById("time");
-const movesElement = document.getElementById("moves");
-const restartButton = document.getElementById("restartButton");
+const memoryGame = document.getElementById("gameBoard") as HTMLDivElement;
+const timerElement = document.getElementById("time") as HTMLSpanElement;
+const movesElement = document.getElementById("moves") as HTMLSpanElement;
+const restartButton = document.getElementById(
+  "restartButton"
+) as HTMLButtonElement;
 
+<<<<<<< HEAD
 //game state variexport {initialzeGame, memoryGame, timerElement, movesElement, restartButton, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted}ables
 let cards: Card[] = []; // array to store all cards / Array zum Speichern aller Karten
 let flippedCards: Card[] = []; // array to store flipped cards / Array zum Speichern der umgedrehten Karten
@@ -27,10 +30,13 @@ let gameStarted: boolean = false; // flag to check if game has started / Flagge 
 let movesDisplay: HTMLElement; // reference to moves display / Referenz auf Anzeige der Züge
 let timeDisplay: HTMLElement;
 let gameBoard: HTMLElement;
+=======
+//game state variexport {initialzeGame, memoryGame, timerElement, movesElement, restartButton, card, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted}ables
+// let card: Card[] = []; // array to store all card / Array zum Speichern aller Karten
+>>>>>>> 14-in-review
 
-restartButton?.addEventListener("click", () => restartGame());
-initialzeGame();
 
+<<<<<<< HEAD
 function initialzeGame(): void {
   const emojis = [
     "🎲",
@@ -70,4 +76,13 @@ export {
   gameBoard,
     timerInterval,
 };
+=======
+//Eventlister for restart button
+restartButton?.addEventListener("click", restartGame);
+
+//Eventlistener for DOMContentLoaded
+document.addEventListener("DOMContentLoaded", initializeGame);
+
+export { restartButton, memoryGame, timerElement, movesElement };
+>>>>>>> 14-in-review
 export type { Card };
