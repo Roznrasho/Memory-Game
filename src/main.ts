@@ -17,7 +17,6 @@ const restartButton = document.getElementById(
   "restartButton"
 ) as HTMLButtonElement;
 
-<<<<<<< HEAD
 //game state variexport {initialzeGame, memoryGame, timerElement, movesElement, restartButton, cards, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted}ables
 let cards: Card[] = []; // array to store all cards / Array zum Speichern aller Karten
 let flippedCards: Card[] = []; // array to store flipped cards / Array zum Speichern der umgedrehten Karten
@@ -30,13 +29,8 @@ let gameStarted: boolean = false; // flag to check if game has started / Flagge 
 let movesDisplay: HTMLElement; // reference to moves display / Referenz auf Anzeige der Züge
 let timeDisplay: HTMLElement;
 let gameBoard: HTMLElement;
-=======
-//game state variexport {initialzeGame, memoryGame, timerElement, movesElement, restartButton, card, flippedCards, matchedPairs, moves, timer, timerInterval, gameStarted}ables
-// let card: Card[] = []; // array to store all card / Array zum Speichern aller Karten
->>>>>>> 14-in-review
 
 
-<<<<<<< HEAD
 function initialzeGame(): void {
   const emojis = [
     "🎲",
@@ -76,13 +70,4 @@ export {
   gameBoard,
     timerInterval,
 };
-=======
-//Eventlister for restart button
-restartButton?.addEventListener("click", restartGame);
-
-//Eventlistener for DOMContentLoaded
-document.addEventListener("DOMContentLoaded", initializeGame);
-
-export { restartButton, memoryGame, timerElement, movesElement };
->>>>>>> 14-in-review
 export type { Card };
