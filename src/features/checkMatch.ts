@@ -1,10 +1,9 @@
-import { card, gameState} from "../main";
+import { gameState } from "../main";
 import { renderCards } from "./shuffleAndRender";
 import { endGame } from "./endGame";
-
+import { card } from "./initializeGame";
 
 function checkMatch(): void {
-  
   const [card1, card2] = gameState.flippedCards;
   if (card1.value === card2.value) {
     card1.isMatched = true;
@@ -22,5 +21,4 @@ function checkMatch(): void {
   renderCards(card);
 }
 
-
-export { checkMatch};
+export { checkMatch };

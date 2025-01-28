@@ -14,7 +14,7 @@ const shuffleCarde = (card: Card[]): void => {
 // Define the renderCards function to render the card on the memory game board
 function renderCards(
   // The HTML element representing the memory game board
-  card: Card[], // The array of card objects to be rendered
+  card: Card[] // The array of card objects to be rendered
   // The function to handle card clicks
 ): void {
   memoryGame.innerHTML = ""; // Clear the existing content of the memory game board
@@ -26,9 +26,10 @@ function renderCards(
     cardElement.innerHTML = `
                          <div class="card-front"></div>
                         <div class="card-back">${card.value}</div>`; // Set the inner HTML of the card element
-    cardElement.addEventListener("click", () => handleCardClick(card, cardElement)); // Add a click event listener to the card element
-    
-    
+    cardElement.addEventListener("click", () =>
+      handleCardClick(card, cardElement)
+    ); // Add a click event listener to the card element
+
     memoryGame.appendChild(cardElement);
   });
 }

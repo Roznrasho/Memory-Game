@@ -1,13 +1,12 @@
-import { Card, movesElement, gameState} from "../main";
+import { Card, movesElement, gameState } from "../main";
 
 import { startTimer } from "./startTimer";
-
-
 
 // handleCardClick-Funktion
 function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
   // Verhindere Klicks auf bereits zugeordnete oder umgedrehte Karten oder wenn bereits 2 Karten ausgewählt sind
-  if (card.isMatched || card.isFlipped || gameState.flippedCards.length >= 2) return;
+  if (card.isMatched || card.isFlipped || gameState.flippedCards.length >= 2)
+    return;
 
   // Starte den Timer beim ersten Klick
   if (!gameState.gameStarted) {
@@ -26,7 +25,7 @@ function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
   // Wenn 2 Karten ausgewählt wurden, prüfe, ob sie ein Paar sind
   if (gameState.flippedCards.length === 2) {
     gameState.moves++;
-    movesElement.textContent = gameState.moves.toString(); // Aktualisiere die Züge im UI                                   
+    movesElement.textContent = gameState.moves.toString(); // Aktualisiere die Züge im UI
 
     // Überprüfe, ob die Karten ein Match sind
     if (gameState.flippedCards[0].value === gameState.flippedCards[1].value) {
