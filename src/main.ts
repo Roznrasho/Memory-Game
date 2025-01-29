@@ -2,12 +2,7 @@ import { restartGame } from "./features/restartgame";
 import "./style.css";
 import { initializeGame } from "./features/initializeGame";
 
-interface Card {
-  id: number;
-  value: string;
-  isFlipped: boolean;
-  isMatched: boolean;
-}
+
 
 // Get references to DOM elements
 const memoryGame = document.getElementById("gameBoard") as HTMLDivElement;
@@ -28,4 +23,4 @@ restartButton?.addEventListener("click", restartGame);
 document.addEventListener("DOMContentLoaded", initializeGame);
 
 export { restartButton, memoryGame, timerElement, movesElement };
-export type { Card };
+

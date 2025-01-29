@@ -1,6 +1,7 @@
-import { Card } from "../main";
+
 import { handleCardClick } from "./handleCardClick";
 import { memoryGame } from "../main";
+import { Card } from "../memoryGameState/MemoryGameState";
 
 const shuffleCarde = (card: Card[]): void => {
   // Shuffles an array of card in place using the Fisher-Yates algorithm.

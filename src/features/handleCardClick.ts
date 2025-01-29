@@ -1,5 +1,7 @@
 import { gameState } from "../gameStateData/gameState";
-import { Card, movesElement} from "../main";
+import { movesElement } from "../main";
+import { Card } from "../memoryGameState/MemoryGameState";
+
 
 import { startTimer } from "./startTimer";
 
