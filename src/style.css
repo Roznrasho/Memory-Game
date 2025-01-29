@@ -125,3 +125,13 @@ h1 {
     transform: rotateY(180deg) scale(1.1);
   }
 }
+button {
+  margin: 10px;
+  padding: 80px 80px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* #start-12, #start-24 {
+  display: inline-block;
+} */
