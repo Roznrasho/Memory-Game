@@ -6,27 +6,23 @@ import { Card } from "../memoryGameState/MemoryGameState";
 
 let card: Card[] = [];
 
-function initializeGame(): void {
+
+
+
+function initializeGame(cardCount: number): void {
   const emojis = [
-    "🎲",
-    "🎨",
-    "🎭",
-    "⚽",
-    "♟️",
-    "🎁",
-    "🏆",
-    "🚀",
-    "🎪",
-    "⚓",
-    "🪭",
-    "⚜️",
+    "🎲", "🎨", "🎭", "⚽", "♟️", "🎁", "🏆", "🚀", "🎪", "⚓", "🪭", "⚜️"
   ];
-  card = [...emojis, ...emojis].map((value, index) => ({
+
+ 
+  const selectedEmojis = emojis.slice(0, cardCount / 2);
+  card = [...selectedEmojis, ...selectedEmojis].map((value, index) => ({
     id: index,
     value,
     isFlipped: false,
     isMatched: false,
   }));
+
   shuffleCarde(card);
   renderCards(card);
   gameState.moves = 0;

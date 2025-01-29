@@ -5,6 +5,7 @@ import { renderCards, shuffleCarde } from "./shuffleAndRender";
 import { gameState } from "../gameStateData/gameState";
 
 function restartGame(): void {
+  
   // Reset game state
   card.forEach((card) => {
     card.isFlipped = false;
