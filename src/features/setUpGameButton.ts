@@ -9,12 +9,15 @@ function setUpGameButtons() {
         initializeGame(12);
     });
 
-    start18Button?.addEventListener("click", () => {
-        initializeGame(18); 
-    });
+ 
 
     start24Button?.addEventListener("click", () => {
         initializeGame(24);
     });
+   
+start18Button?.addEventListener("click", () => {
+    initializeGame(18); 
+});
+
 }
 export { setUpGameButtons };

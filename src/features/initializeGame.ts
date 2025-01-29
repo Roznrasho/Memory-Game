@@ -30,6 +30,10 @@ function initializeGame(cardCount: number): void {
   gameState.gameStarted = false;
   movesElement.textContent = "0";
   timerElement.textContent = "0:00";
+  const statsElement = document.querySelector('.stats');
+  if (statsElement) {
+    statsElement.classList.remove('hidden');
+  }
 }
 
 export { initializeGame, card };

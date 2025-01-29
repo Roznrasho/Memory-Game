@@ -135,3 +135,6 @@ button {
 /* #start-12, #start-24 {
   display: inline-block;
 } */
+.hidden {
+  display: none;
+}
