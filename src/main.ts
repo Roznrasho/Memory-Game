@@ -19,8 +19,20 @@ const restartButton = document.getElementById(
 //Eventlister for restart button
 restartButton?.addEventListener("click", restartGame);
 
+
+const start12Button = document.getElementById("start-12") as HTMLButtonElement;
+const start24Button = document.getElementById("start-24") as HTMLButtonElement;
+
+start12Button.addEventListener("click", () => {
+  initializeGame(12); // Spiel mit 12 Karten starten
+});
+
+start24Button.addEventListener("click", () => {
+  initializeGame(24); // Spiel mit 24 Karten starten
+});
+
 //Eventlistener for DOMContentLoaded
-document.addEventListener("DOMContentLoaded", initializeGame);
+// document.addEventListener("DOMContentLoaded", initializeGame);
 
 export { restartButton, memoryGame, timerElement, movesElement };
 
