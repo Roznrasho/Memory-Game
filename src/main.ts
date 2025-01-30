@@ -1,10 +1,14 @@
 import { restartGame } from "./features/restartgame";
 import "./style.css";
-import { initializeGame } from "./features/initializeGame";
+
+import { setUpGameButtons } from "./features/setUpGameButton";
 
 
 
-// Get references to DOM elements
+
+
+
+
 const memoryGame = document.getElementById("gameBoard") as HTMLDivElement;
 const timerElement = document.getElementById("time") as HTMLSpanElement;
 const movesElement = document.getElementById("moves") as HTMLSpanElement;
@@ -20,19 +24,18 @@ const restartButton = document.getElementById(
 restartButton?.addEventListener("click", restartGame);
 
 
-const start12Button = document.getElementById("start-12") as HTMLButtonElement;
-const start24Button = document.getElementById("start-24") as HTMLButtonElement;
 
-start12Button.addEventListener("click", () => {
-  initializeGame(12); // Spiel mit 12 Karten starten
+
+document.addEventListener("DOMContentLoaded", () => {
+  setUpGameButtons();
+  console.log('hallo:');
 });
 
-start24Button.addEventListener("click", () => {
-  initializeGame(24); // Spiel mit 24 Karten starten
-});
 
-//Eventlistener for DOMContentLoaded
-// document.addEventListener("DOMContentLoaded", initializeGame);
+
+
+
+// export { restartButton, memoryGame, timerElement, movesElement };
 
 export { restartButton, memoryGame, timerElement, movesElement };
 
