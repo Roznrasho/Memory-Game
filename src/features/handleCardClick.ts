@@ -33,9 +33,14 @@ function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
     // Überprüfe, ob die Karten ein Match sind
     if (gameState.flippedCards[0].value === gameState.flippedCards[1].value) {
       // Karten passen zusammen: Markiere sie als "matched" und leere flippedCards
-      gameState.flippedCards[0].isMatched = true;
-      gameState.flippedCards[1].isMatched = true;
-      gameState.flippedCards.length = 0; // Array leeren
+
+      // gameState.flippedCards[0].isMatched = true;
+      // gameState.flippedCards[1].isMatched = true;
+      gameState.flippedCards.forEach((flippedCard) => (flippedCard.isMatched = true))
+
+      // gameState.flippedCards.length = 0; 
+      gameState.flippedCards = []// Array leeren
+
     } else {
       // Karten passen nicht zusammen: Schließe sie nach einer kurzen Verzögerung
       setTimeout(() => {
@@ -52,7 +57,8 @@ function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
           });
         });
 
-        gameState.flippedCards.length = 0; // Array leeren
+        // gameState.flippedCards.length = 0;
+        gameState.flippedCards = [] // Array leeren
       }, 1000); // 1 Sekunde Verzögerung, bevor die Karten wieder zugedeckt werden
     }
   }
