@@ -12,7 +12,6 @@ function setUpGameButtons() {
   const start24Button = document.getElementById(
     "start-24"
   ) as HTMLButtonElement;
-  console.log('start24Button:',start24Button);
 
   start12Button?.addEventListener("click", () => {
     initializeGame(12);
@@ -26,5 +25,4 @@ function setUpGameButtons() {
     initializeGame(24);
   });
 }
-console.log('setUpGameButtons:',setUpGameButtons);
 export { setUpGameButtons };
