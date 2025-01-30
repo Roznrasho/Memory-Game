@@ -37,7 +37,7 @@ h1 {
 
   margin-bottom: 4vh;
   text-align: center;
-  color: hsl(217, 66%, 25%);
+  color: hsl(184, 86%, 28%);
   font-size: 1.8rem;
 }
 
@@ -71,7 +71,7 @@ h1 {
   padding: 1.8rem;
 }
 .card-buttons {
-  background-color: hsl(217, 66%, 25%);
+  background-color: hsl(184, 86%, 28%);
   color: white;
   border:none;
   border-radius: 0.25rem;
@@ -91,7 +91,7 @@ h1 {
 .restart-button {
   padding: 8px 16px;
   font-size: 1rem;
-  background-color: hsl(217, 66%, 25%);
+  background-color: hsl(184, 86%, 28%);
   color: white;
   border: none;
   border-radius: 4px;
@@ -100,7 +100,7 @@ h1 {
 }
 
 .restart-button:hover {
-  background-color: hsl(217, 66%, 25%);
+  background-color: hsl(184, 86%, 28%);
 }
 
 .game-board {
@@ -138,7 +138,7 @@ h1 {
 }
 
 .card-front {
-  background-color: hsl(217, 66%, 25%);
+  background-color: hsl(184, 86%, 28%);
   font-size: 3em;
   color: white;
 }
