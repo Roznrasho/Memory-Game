@@ -14,7 +14,7 @@ function restartGame(): void {
   gameState.matchedPairs.length = 0;
   gameState.moves = 0;
   gameState.timer = 0;
-  gameState.gameStarted = false; // Wichtig, um sicherzustellen, dass der Timer erneut gestartet werden kann
+  gameState.gameStarted = false; 
   movesElement.textContent = "0";
   timerElement.textContent = "0:00";
   // Clear timer if it's running

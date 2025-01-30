@@ -9,7 +9,9 @@ function checkMatch(): void {
   if (card1.value === card2.value) {
     card1.isMatched = true;
     card2.isMatched = true;
-    gameState.matchedPairs.push(card1, card2);
+    // gameState.matchedPairs.push(card1, card2);
+    gameState.matchedPairs.push(...gameState.flippedCards)
+   
     if (cards.every((card) => card.isMatched)) {
       endGame();
     }
@@ -18,7 +20,8 @@ function checkMatch(): void {
     card2.isFlipped = false;
   }
 
-  gameState.flippedCards.length = 0;
+  // gameState.flippedCards.length = 0;
+  gameState.flippedCards = [];
   renderCards(cards);
 }
 
