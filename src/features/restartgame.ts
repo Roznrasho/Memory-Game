@@ -10,13 +10,22 @@ function restartGame(): void {
     card.isFlipped = false;
     card.isMatched = false;
   });
-  gameState.flippedCards.length = 0;
-  gameState.matchedPairs.length = 0;
-  gameState.moves = 0;
-  gameState.timer = 0;
-  gameState.gameStarted = false; 
+  // gameState.flippedCards.length = 0;
+  // gameState.matchedPairs.length = 0;
+  // gameState.moves = 0;
+  // gameState.timer = 0;
+  // gameState.gameStarted = false; 
   movesElement.textContent = "0";
   timerElement.textContent = "0:00";
+  
+  Object.assign(gameState, {
+    flippedCards: [],
+    matchedPairs: [],
+    moves: 0,
+    timer: 0,
+    gameStarted: false,
+    timerInterval: null,
+  });
   // Clear timer if it's running
   if (timerInterval) {
     clearInterval(timerInterval);
