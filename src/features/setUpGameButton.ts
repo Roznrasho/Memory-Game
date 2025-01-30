@@ -1,28 +1,21 @@
 import { initializeGame } from "./initializeGame";
 
 function setUpGameButtons() {
-  const start12Button = document.getElementById(
-    "start-12"
-  ) as HTMLButtonElement;
-  const start18Button = document.getElementById(
-    "start-18"
-  ) as HTMLButtonElement;
-  
-  console.log('start:',start18Button);
-  const start24Button = document.getElementById(
-    "start-24"
-  ) as HTMLButtonElement;
+  const buttonConfigs = [
+    { id: "start-12", count: 12 },
+    { id: "start-18", count: 18 },
+    { id: "start-24", count: 24 }
+  ];
 
-  start12Button?.addEventListener("click", () => {
-    initializeGame(12);
-  });
-  start18Button?.addEventListener("click", () => {
-    initializeGame(18);
-   
-  });
+  buttonConfigs.forEach((config) => {
+    const button = document.getElementById(config.id) as HTMLButtonElement;
 
-  start24Button?.addEventListener("click", () => {
-    initializeGame(24);
+    if (button) {
+      button.addEventListener("click", () => {
+        initializeGame(config.count); // Button setzt die entsprechende Kartenanzahl
+      });
+    } 
   });
 }
+
 export { setUpGameButtons };
