@@ -1,5 +1,4 @@
-import { Card } from "../memoryGameState/MemoryGameState";
-
+import { Card } from "../main";
 
 export const gameState = {
     moves: 0,
