@@ -1,6 +1,8 @@
 import { restartGame } from "./features/restartgame";
 import "./style.css";
 
+
+
 import { setUpGameButtons } from "./features/setUpGameButton";
 
 const memoryGame = document.getElementById("gameBoard") as HTMLDivElement;
