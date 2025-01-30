@@ -136,7 +136,7 @@ h1 {
 .card-back {
   background-color: white;
   transform: rotateY(180deg);
-  font-size: 3em;
+  font-size: 1.8em;
 }
 
 .card.matched {
