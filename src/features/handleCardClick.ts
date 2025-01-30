@@ -58,4 +58,6 @@ function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
   }
 }
 
+
+
 export { handleCardClick };
