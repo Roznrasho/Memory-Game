@@ -16,9 +16,22 @@ body {
 
 .container {
   max-width: 100vw;
+  width: 80vw;
   height: 50vh;
   
 }
+
+.container {
+  max-width: 100vw;
+  width: 80vw;
+  height: 50vh;
+  transition: margin-top 0.3s ease; /* Smooth transition */
+}
+
+.container.shift-up {
+  margin-top: -40vh; /* Adjust this value as needed */
+}
+
 
 h1 {
 
@@ -42,12 +55,37 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 5vh;
+  margin-bottom: 0vh;
   font-size: 1.2rem;
   background: white;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1.8rem;
+}
+.card-buttons {
+  background-color: hsl(217, 66%, 25%);
+  color: white;
+  border:none;
+  border-radius: 0.25rem;
+  margin: 0.2rem;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* #start-12, #start-24 {
+  display: inline-block;
+} */
+.hidden {
+  display: none;
 }
 
 .restart-button {
@@ -66,12 +104,13 @@ h1 {
 }
 
 .game-board {
+  padding-top: 4vh;
+  padding-bottom: 4vh;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 10px;
   perspective: 1000px;
-  padding-bottom: 4vh;
-}
+  }
 
 .card {
   aspect-ratio: 3/4;
@@ -124,17 +163,4 @@ h1 {
   50% {
     transform: rotateY(180deg) scale(1.1);
   }
-}
-button {
-  margin: 10px;
-  padding: 80px 80px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* #start-12, #start-24 {
-  display: inline-block;
-} */
-.hidden {
-  display: none;
 }
