@@ -41,16 +41,6 @@ h1 {
   font-size: 1.8rem;
 }
 
-.title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: hsl(217, 66%, 25%);
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .stats {
   display: flex;
   justify-content: space-between;
