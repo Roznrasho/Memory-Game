@@ -16,6 +16,7 @@ body {
 .container {
   max-width: 400vw;
   width: 90%;
+  height: 60vh;
 }
 
 h1{
