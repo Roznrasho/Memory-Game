@@ -1,9 +1,10 @@
-
+//const body = document.querySelector("body") as HTMLBodyElement;
 import { renderCards } from "./shuffleAndRender";
 import { endGame } from "./endGame";
-import { card } from "./initializeGame";
+import { cards } from "./initializeGame";
 import { gameState } from "../gameStateData/gameState";
-import { startConfettiAnimation } from "./confetti"; 
+//import { startConfettiAnimation } from "./confetti"; 
+//import { memoryGame } from "../main";
 
 function checkMatch(): void {
   const [card1, card2] = gameState.flippedCards;
@@ -11,19 +12,19 @@ function checkMatch(): void {
     card1.isMatched = true;
     card2.isMatched = true;
     gameState.matchedPairs.push(card1, card2);
-    if (card.every((card) => card.isMatched)) {
-      startConfettiAnimation();
-      console.log("🎉 Konfetti-Animation wird gestartet!");
+    if (cards.every((card) => card.isMatched)) {
+     // startConfettiAnimation();
+     // console.log("✅ Alle Karten sind gematcht! Spiel endet jetzt.");
+     // body.style.background = "red";
+     alert(`🎉 Herzlichen Glückwunsch! Du hast das Spiel in ${gameState.moves} Zügen abgeschlossen.`);
       endGame();
-      alert(`🎉 Herzlichen Glückwunsch! Du hast das Spiel in ${gameState.moves} Zügen abgeschlossen.`);
     }
   } else {
     card1.isFlipped = false;
     card2.isFlipped = false;
   }
-
   gameState.flippedCards.length = 0;
-  renderCards(card);
+  renderCards(cards);
 }
 
 export { checkMatch };

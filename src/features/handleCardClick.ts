@@ -1,9 +1,6 @@
 import { gameState } from "../gameStateData/gameState";
 import { movesElement } from "../main";
 import { Card } from "../memoryGameState/MemoryGameState";
-import { checkMatch } from "./checkMatch";   
-
-
 import { startTimer } from "./startTimer";
 
 // handleCardClick-Funktion
@@ -37,7 +34,6 @@ function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
       gameState.flippedCards[0].isMatched = true;
       gameState.flippedCards[1].isMatched = true;
       gameState.flippedCards.length = 0; // Array leeren
-      checkMatch(); // Überprüfe, ob das Spiel beendet ist
     } else {
       // Karten passen nicht zusammen: Schließe sie nach einer kurzen Verzögerung
       setTimeout(() => {
