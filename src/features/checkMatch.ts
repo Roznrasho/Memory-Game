@@ -3,6 +3,7 @@ import { renderCards } from "./shuffleAndRender";
 import { endGame } from "./endGame";
 import { card } from "./initializeGame";
 import { gameState } from "../gameStateData/gameState";
+import { startConfettiAnimation } from "./confetti"; 
 
 function checkMatch(): void {
   const [card1, card2] = gameState.flippedCards;
@@ -11,7 +12,10 @@ function checkMatch(): void {
     card2.isMatched = true;
     gameState.matchedPairs.push(card1, card2);
     if (card.every((card) => card.isMatched)) {
+      startConfettiAnimation();
+      console.log("🎉 Konfetti-Animation wird gestartet!");
       endGame();
+      alert(`🎉 Herzlichen Glückwunsch! Du hast das Spiel in ${gameState.moves} Zügen abgeschlossen.`);
     }
   } else {
     card1.isFlipped = false;
