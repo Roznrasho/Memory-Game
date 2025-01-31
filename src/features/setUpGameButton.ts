@@ -8,7 +8,6 @@ function setUpGameButtons() {
     "start-18"
   ) as HTMLButtonElement;
   
-  console.log('start:',start18Button);
   const start24Button = document.getElementById(
     "start-24"
   ) as HTMLButtonElement;
