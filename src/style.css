@@ -14,60 +14,84 @@ body {
 }
 
 .container {
-  max-width: 800px;
-  width: 90%;
+  max-width: 100vw;
+  width: 80vw;
+  height: 50vh;
+  transition: margin-top 0.3s ease; /* Smooth transition */
 }
 
-h1{
-  margin-top: 4vh;
+.container.shift-up {
+  margin-top: -40vh; /* Adjust this value as needed */
+}
+
+h1 {
   margin-bottom: 4vh;
   text-align: center;
   color: hsl(184, 86%, 28%);
   font-size: 1.8rem;
 }
 
-.title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: hsl(184, 86%, 28%);
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
-
 .stats {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border: none;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1.8rem;
+}
+.card-buttons {
+  background-color: hsl(184, 86%, 28%);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.3);
+  margin: 0.2rem;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* #start-12, #start-24 {
+  display: inline-block;
+} */
+.hidden {
+  display: none;
 }
 
 .restart-button {
-  padding: 8px 16px;
-  font-size: 1rem;
-  background-color:hsl(184, 86%, 28%);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  background-color: hsl(184, 86%, 28%);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .restart-button:hover {
-  background-color:hsl(184, 86%, 28%);
+  background-color: hsl(184, 86%, 28%);
 }
 
 .game-board {
+  max-width: 100vw;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
-  perspective: 1000px;
+  gap: 0.4rem;
+  perspective: 65rem;
 }
 
 .card {
@@ -91,20 +115,20 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.3);
 }
 
 .card-front {
-  background-color:hsl(184, 86%, 28%);
-  font-size: 2em;
+  background-color: hsl(184, 86%, 28%);
+  font-size: 3rem;
   color: white;
 }
 
 .card-back {
   background-color: white;
   transform: rotateY(180deg);
-  font-size: 2em;
+  font-size: 1.6rem;
 }
 
 .card.matched {
@@ -122,16 +146,50 @@ h1{
     transform: rotateY(180deg) scale(1.1);
   }
 }
-button {
-  margin: 10px;
-  padding: 80px 80px;
-  font-size: 16px;
-  cursor: pointer;
+
+@media (min-width: 768px) {
+  h1 {
+    margin-bottom: 2vh;
+  }
+
+  .card-buttons {
+    font-size: 1rem;
+  }
+
+  .game-board {
+    margin: auto;
+    max-width: 75vw;
+    max-height: 90vh;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .stats {
+    max-width: 80vw;
+    margin: auto;
+  }
+
+  .restart-button {
+    font-size: 1rem;
+    background-color: hsl(184, 86%, 28%);
+  }
+
+  .card-back {
+    font-size: 1.8rem;
+  }
 }
 
-/* #start-12, #start-24 {
-  display: inline-block;
-} */
-.hidden {
-  display: none;
+@media (min-width: 1024px) {
+  .game-board {
+    margin: auto;
+    max-width: 55vw;
+    max-height: 90vh;
+  }
+
+  .stats {
+    max-width: 60vw;
+    margin: auto;
+  }
+  .card-back {
+    font-size: 2rem;
+  }
 }
