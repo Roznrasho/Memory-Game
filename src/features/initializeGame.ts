@@ -1,6 +1,5 @@
 import { shuffleCards, renderCards } from "./shuffleAndRender";
 import { movesElement, timerElement } from "../main";
-
 import { gameState } from "../gameStateData/gameState";
 import { Card } from "../memoryGameState/MemoryGameState";
 
