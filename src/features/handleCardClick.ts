@@ -2,6 +2,7 @@ import { gameState } from "../gameStateData/gameState";
 import { movesElement } from "../main";
 import { Card } from "../memoryGameState/MemoryGameState";
 import { startTimer } from "./startTimer";
+import { checkMatch } from "./checkMatch";
 
 // handleCardClick-Funktion
 function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
@@ -27,13 +28,14 @@ function handleCardClick(card: Card, cardElement: HTMLDivElement): void {
   if (gameState.flippedCards.length === 2) {
     gameState.moves++;
     movesElement.textContent = gameState.moves.toString(); // Aktualisiere die Züge im UI
-
+    checkMatch();
     // Überprüfe, ob die Karten ein Match sind
     if (gameState.flippedCards[0].value === gameState.flippedCards[1].value) {
       // Karten passen zusammen: Markiere sie als "matched" und leere flippedCards
       gameState.flippedCards[0].isMatched = true;
       gameState.flippedCards[1].isMatched = true;
       gameState.flippedCards.length = 0; // Array leeren
+      
     } else {
       // Karten passen nicht zusammen: Schließe sie nach einer kurzen Verzögerung
       setTimeout(() => {

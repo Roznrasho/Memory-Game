@@ -12,9 +12,7 @@ import { Card } from "../memoryGameState/MemoryGameState";
  * index and the random index.
  */
 const shuffleCards = (cards: Card[]): void => {
-  // Shuffles an array of card in place using the Fisher-Yates algorithm.
   for (let i = cards.length - 1; i > 0; i--) {
-    // Loop over the array from the last element to the second element
     const j = Math.floor(Math.random() * (i + 1)); // Generate a random index from 0 to i
     [cards[i], cards[j]] = [cards[j], cards[i]]; // Swap the elements at indices i and j
   }
@@ -34,9 +32,7 @@ const shuffleCards = (cards: Card[]): void => {
  * The card elements are then appended to the memory game board.
  */
 function renderCards(
-  // The HTML element representing the memory game board
-  cards: Card[] // The array of card objects to be rendered
-  // The function to handle card clicks
+  cards: Card[]
 ): void {
   memoryGame.innerHTML = ""; // Clear the existing content of the memory game board
   cards.forEach((card) => {
@@ -46,7 +42,7 @@ function renderCards(
     }`; // Set the class name based on the card's state
     cardElement.innerHTML = `
                          <div class="card-front"></div>
-                        <div class="card-back">${card.value}</div>`; // Set the inner HTML of the card element
+                        <div class="card-back">${card.value}</div>`; 
     cardElement.addEventListener("click", () =>
       handleCardClick(card, cardElement)
     ); // Add a click event listener to the card element
