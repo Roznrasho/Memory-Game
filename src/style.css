@@ -95,7 +95,7 @@ h1 {
 }
 
 .card {
-  aspect-ratio: 3/4;
+  aspect-ratio: 5/4;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s;
@@ -158,20 +158,18 @@ h1 {
 
   .game-board {
     margin: auto;
-    max-width: 75vw;
+    max-width: 60vw;
     max-height: 90vh;
-    grid-template-columns: repeat(8, 1fr);
-  }
+    }
 
   .stats {
-    max-width: 80vw;
+    max-width: 65vw;
     margin: auto;
   }
 
   .restart-button {
     font-size: 1rem;
-    background-color: hsl(184, 86%, 28%);
-  }
+      }
 
   .card-back {
     font-size: 1.8rem;
@@ -189,6 +187,7 @@ h1 {
     max-width: 60vw;
     margin: auto;
   }
+
   .card-back {
     font-size: 2rem;
   }
